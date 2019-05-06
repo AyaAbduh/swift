@@ -191,7 +191,6 @@
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="AddBtn:" destination="mnb-Ph-HZh" eventType="touchUpInside" id="CJk-im-J3g"/>
-                                    <segue destination="lgV-H6-MaH" kind="push" id="hGi-af-gzK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -214,7 +213,7 @@
         <!--Root View Controller-->
         <scene sceneID="Ajy-DC-aO6">
             <objects>
-                <tableViewController id="lgV-H6-MaH" customClass="movieTableViewController" customModule="movieApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="movieViewController" id="lgV-H6-MaH" customClass="movieTableViewController" customModule="movieApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="V7E-Cn-SMn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,9 +226,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="307" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="push" trigger="accessoryAction" id="W1j-EU-FBa"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -260,7 +256,4 @@
             <point key="canvasLocation" x="132" y="732"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="hGi-af-gzK"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -14,6 +14,7 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
     var movie3:movie!
     var movie4:movie!
     var movie5:movie!
+    var Movie:movie!
     var movieList = [movie]()
     
     
@@ -70,8 +71,21 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
         movieList.append(movie3)
         movieList.append(movie4)
         movieList.append(movie5)
+        
+        if((Movie) != nil){
+            movieList.append(Movie)
+            print("MovieToadd")
+            DispatchQueue.main.async() {
+                self.tableView.reloadData()
+            }
+        }
+       
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async() {
+            self.tableView.reloadData()
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -112,12 +126,12 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50;
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let AddMovieVC=segue.destination as! AddMovieController
-        AddMovieVC.AddMovievc=self
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let AddMovieVC=segue.destination as! AddMovieController
+//        AddMovieVC.AddMovievc=self
+//    }
     func AddMovie(newMovie: movie) {
-        print("MovieTitle",newMovie.title as Any)
+        print("MovieTitle")
         movieList.append(newMovie)
     }
     /*

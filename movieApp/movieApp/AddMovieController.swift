@@ -10,7 +10,7 @@ import UIKit
 
 class AddMovieController: UIViewController {
     var AddedMovie:movie!
-     var AddMovievc:AddMovieProtocol?
+    // var AddMovievc:AddMovieProtocol?
     
     @IBOutlet weak var movieImage: UITextField!
     
@@ -36,7 +36,11 @@ class AddMovieController: UIViewController {
     }
     
     @IBAction func AddBtn(_ sender: UIButton) {
-        AddMovievc?.AddMovie(newMovie: AddedMovie)
+        
+        let controller:movieTableViewController = storyboard!.instantiateViewController(withIdentifier: "movieViewController") as! movieTableViewController
+        
+       controller.Movie=AddedMovie
+        self.navigationController?.pushViewController(controller, animated: false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
