@@ -15,6 +15,13 @@
 		BA449EE8227F355B00EA36C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA449EE6227F355B00EA36C4 /* LaunchScreen.storyboard */; };
 		BA449EF6227F3FFF00EA36C4 /* movieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA449EF5227F3FFF00EA36C4 /* movieTableViewController.swift */; };
 		BA449EF8227F403100EA36C4 /* movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA449EF7227F403100EA36C4 /* movie.swift */; };
+		BAB9B3712280ABC4009FC83A /* spiderMan.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAB9B3702280ABC4009FC83A /* spiderMan.jpeg */; };
+		BAB9B3732280ABCE009FC83A /* HomeAlone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB9B3722280ABCE009FC83A /* HomeAlone.jpg */; };
+		BAB9B3752280ABDC009FC83A /* HarryPotter.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAB9B3742280ABDB009FC83A /* HarryPotter.jpeg */; };
+		BAB9B3772280ABE5009FC83A /* Sam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAB9B3762280ABE5009FC83A /* Sam.jpg */; };
+		BAB9B3792280AD92009FC83A /* NoteBook.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BAB9B3782280AD92009FC83A /* NoteBook.jpeg */; };
+		BAB9B37B2280B252009FC83A /* AddMovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB9B37A2280B252009FC83A /* AddMovieController.swift */; };
+		BAB9B37D2280BEEA009FC83A /* AddMovieProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB9B37C2280BEEA009FC83A /* AddMovieProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		BA449EE9227F355C00EA36C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA449EF5227F3FFF00EA36C4 /* movieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieTableViewController.swift; sourceTree = "<group>"; };
 		BA449EF7227F403100EA36C4 /* movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie.swift; sourceTree = "<group>"; };
+		BAB9B3702280ABC4009FC83A /* spiderMan.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spiderMan.jpeg; sourceTree = "<group>"; };
+		BAB9B3722280ABCE009FC83A /* HomeAlone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HomeAlone.jpg; sourceTree = "<group>"; };
+		BAB9B3742280ABDB009FC83A /* HarryPotter.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = HarryPotter.jpeg; sourceTree = "<group>"; };
+		BAB9B3762280ABE5009FC83A /* Sam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sam.jpg; sourceTree = "<group>"; };
+		BAB9B3782280AD92009FC83A /* NoteBook.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = NoteBook.jpeg; sourceTree = "<group>"; };
+		BAB9B37A2280B252009FC83A /* AddMovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieController.swift; sourceTree = "<group>"; };
+		BAB9B37C2280BEEA009FC83A /* AddMovieProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovieProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +77,19 @@
 				BA449EDA227F355100EA36C4 /* AppDelegate.swift */,
 				BA449EDC227F355100EA36C4 /* ViewController.swift */,
 				BA449EDE227F355100EA36C4 /* Main.storyboard */,
+				BAB9B3742280ABDB009FC83A /* HarryPotter.jpeg */,
 				BA449EE4227F355B00EA36C4 /* Assets.xcassets */,
 				BA449EE6227F355B00EA36C4 /* LaunchScreen.storyboard */,
+				BAB9B3722280ABCE009FC83A /* HomeAlone.jpg */,
+				BAB9B3782280AD92009FC83A /* NoteBook.jpeg */,
+				BAB9B3762280ABE5009FC83A /* Sam.jpg */,
 				BA449EE9227F355C00EA36C4 /* Info.plist */,
+				BAB9B3702280ABC4009FC83A /* spiderMan.jpeg */,
 				BA449EE1227F355100EA36C4 /* movieApp.xcdatamodeld */,
 				BA449EF5227F3FFF00EA36C4 /* movieTableViewController.swift */,
 				BA449EF7227F403100EA36C4 /* movie.swift */,
+				BAB9B37A2280B252009FC83A /* AddMovieController.swift */,
+				BAB9B37C2280BEEA009FC83A /* AddMovieProtocol.swift */,
 			);
 			path = movieApp;
 			sourceTree = "<group>";
@@ -132,8 +153,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA449EE8227F355B00EA36C4 /* LaunchScreen.storyboard in Resources */,
+				BAB9B3732280ABCE009FC83A /* HomeAlone.jpg in Resources */,
+				BAB9B3792280AD92009FC83A /* NoteBook.jpeg in Resources */,
+				BAB9B3712280ABC4009FC83A /* spiderMan.jpeg in Resources */,
 				BA449EE5227F355B00EA36C4 /* Assets.xcassets in Resources */,
+				BAB9B3752280ABDC009FC83A /* HarryPotter.jpeg in Resources */,
 				BA449EE0227F355100EA36C4 /* Main.storyboard in Resources */,
+				BAB9B3772280ABE5009FC83A /* Sam.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA449EF6227F3FFF00EA36C4 /* movieTableViewController.swift in Sources */,
+				BAB9B37D2280BEEA009FC83A /* AddMovieProtocol.swift in Sources */,
 				BA449EDD227F355100EA36C4 /* ViewController.swift in Sources */,
 				BA449EDB227F355100EA36C4 /* AppDelegate.swift in Sources */,
 				BA449EE3227F355100EA36C4 /* movieApp.xcdatamodeld in Sources */,
+				BAB9B37B2280B252009FC83A /* AddMovieController.swift in Sources */,
 				BA449EF8227F403100EA36C4 /* movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,22 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
      var selectedMovie:movie!
     
     @IBOutlet weak var movieTitle: UILabel!
-    
     @IBOutlet weak var movieRating: UILabel!
-    
     @IBOutlet weak var movieReleaseYear: UILabel!
+    @IBOutlet weak var movieImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        selectedMovie=movie()
         movieTitle.text=selectedMovie.title
-      //  let rating=String(selectedMovie.rating)
-        //movieRating.text=rating
-        //movieReleaseYear.text=selectedMovie.releaseYear
+        let rating = selectedMovie.rating!
+        movieRating.text=String(rating)
+        let releaseyear=selectedMovie.releaseYear!
+        movieReleaseYear.text=String(releaseyear)
+        movieImage.image=UIImage(named: selectedMovie.image!)
+        //selectedMovie.genre[0]
         
     }
 
