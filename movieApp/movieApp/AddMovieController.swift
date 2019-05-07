@@ -37,6 +37,7 @@ class AddMovieController: UIViewController {
 //        let controller:movieTableViewController = storyboard.instantiateViewController(withIdentifier: "movieViewController") as! movieTableViewController
 //        controller.Movie=AddedMovie
 //      self.navigationController?.pushViewController(controller, animated: false)
+        
         AddedMovie=movie()
         AddedMovie.image=movieImage.text
         AddedMovie.title=movieTitle.text

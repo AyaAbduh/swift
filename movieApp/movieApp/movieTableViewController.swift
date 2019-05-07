@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class movieTableViewController: UITableViewController ,AddMovieProtocol{
     var movie1:movie!
@@ -16,7 +17,7 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
     var movie5:movie!
     var Movie:movie!
     var movieList = [movie]()
-    
+    var movies = Array<NSManagedObject>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,16 +68,26 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
         movie5.genre?.append("comidy")
         
         movieList.append(movie1)
-        movieList.append(movie2)
-        movieList.append(movie3)
-        movieList.append(movie4)
-        movieList.append(movie5)
+       // movieList.append(movie2)
+      //  movieList.append(movie3)
+       // movieList.append(movie4)
+      //  movieList.append(movie5)
        
     }
     override func viewWillAppear(_ animated: Bool) {
-            self.tableView.reloadData()
+            super.viewWillAppear(animated)
+            let appDelegate=UIApplication.shared.delegate as! AppDelegate
+            let ManagerContext=appDelegate.persistentContainer.viewContext     //NSMangedObjectContext
+            let fetchRequest=NSFetchRequest<NSManagedObject>(entityName: "Movie")
+            do{
+                movies=try ManagerContext.fetch(fetchRequest)
+            }catch{
+                print("Error")
+            }
+        }
+    
         
-    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -91,16 +102,17 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return movieList.count
-        
+       // return movieList.count
+        return movies.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text=movieList[indexPath.row].title
+       // cell.textLabel?.text=movieList[indexPath.row].title    //previous Lab
+        cell.textLabel?.text=movies[indexPath.row].value(forKey: "title") as! String
         return cell
     }
  
@@ -122,8 +134,23 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
         AddMovieVC.AddMovievc=self
     }
     func AddMovie(newMovie: movie) {
-        movieList.append(newMovie)
-        self.tableView.reloadData()
+        //movieList.append(newMovie)  //previous Lab
+        let appDelegate=UIApplication.shared.delegate as! AppDelegate
+        let ManagerContext=appDelegate.persistentContainer.viewContext     //NSMangedObjectContext
+        let entity=NSEntityDescription.entity(forEntityName: "Movie", in: ManagerContext)
+        let movie=NSManagedObject(entity: entity!, insertInto: ManagerContext)
+        movie.setValue(newMovie.title, forKey: "title")
+        movie.setValue(newMovie.rating, forKey: "rating")
+        movie.setValue(newMovie.releaseYear, forKey: "releaseYear")
+        movie.setValue(newMovie.image, forKey: "image")
+        do{
+            try ManagerContext.save()
+            movies.append(movie)
+            self.tableView.reloadData()
+        }catch let error as NSError{
+            print(error.localizedDescription)
+        }
+         self.tableView.reloadData()
     }
     /*
     // Override to support conditional editing of the table view.
