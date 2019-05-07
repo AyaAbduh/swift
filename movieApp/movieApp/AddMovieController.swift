@@ -10,12 +10,13 @@ import UIKit
 
 class AddMovieController: UIViewController {
     var AddedMovie:movie!
-    // var AddMovievc:AddMovieProtocol?
+    var AddMovievc:AddMovieProtocol?
     
     @IBOutlet weak var movieImage: UITextField!
     
     @IBOutlet weak var movieTitle: UITextField!
     
+   
     @IBOutlet weak var movieRating: UITextField!
     
     @IBOutlet weak var movieGenre: UITextField!
@@ -27,20 +28,24 @@ class AddMovieController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    }
+    
+    @IBAction func AddBtn(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
+//        let controller:movieTableViewController = storyboard.instantiateViewController(withIdentifier: "movieViewController") as! movieTableViewController
+//        controller.Movie=AddedMovie
+//      self.navigationController?.pushViewController(controller, animated: false)
         AddedMovie=movie()
         AddedMovie.image=movieImage.text
         AddedMovie.title=movieTitle.text
         AddedMovie.genre=[movieGenre.text] as? [String]
         AddedMovie.releaseYear=Int (movieReleaseYear.text!)
         AddedMovie.rating=Float(movieRating.text!)
-    }
-    
-    @IBAction func AddBtn(_ sender: UIButton) {
+        AddMovievc?.AddMovie(newMovie: AddedMovie)
+        self.navigationController?.popViewController(animated: true)
         
-        let controller:movieTableViewController = storyboard!.instantiateViewController(withIdentifier: "movieViewController") as! movieTableViewController
-        
-       controller.Movie=AddedMovie
-        self.navigationController?.pushViewController(controller, animated: false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

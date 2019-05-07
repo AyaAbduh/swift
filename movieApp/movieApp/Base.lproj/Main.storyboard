@@ -83,11 +83,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="OkH-iP-QAa">
-                        <barButtonItem key="rightBarButtonItem" title="ADD Movie" id="c4O-JJ-y8w">
-                            <connections>
-                                <segue destination="mnb-Ph-HZh" kind="push" id="aiy-oB-pAJ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="ADD Movie" id="c4O-JJ-y8w"/>
                     </navigationItem>
                     <connections>
                         <outlet property="movieImage" destination="OKI-DH-T9n" id="aiN-cP-pWC"/>
@@ -201,7 +197,7 @@
                     <connections>
                         <outlet property="movieGenre" destination="15R-GJ-z5Z" id="cIO-Ad-iGl"/>
                         <outlet property="movieImage" destination="PYY-3s-uqb" id="VtT-uZ-9pt"/>
-                        <outlet property="movieRating" destination="15R-GJ-z5Z" id="Ful-Vk-HGF"/>
+                        <outlet property="movieRating" destination="dbP-Ma-e5Q" id="7Nw-O0-jR3"/>
                         <outlet property="movieReleaseYear" destination="w1o-wS-zTf" id="BOD-Pf-D7H"/>
                         <outlet property="movieTitle" destination="ub2-yZ-VtM" id="iBY-Tr-U8t"/>
                     </connections>
@@ -233,7 +229,13 @@
                             <outlet property="delegate" destination="lgV-H6-MaH" id="2hm-7T-wO8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="pfJ-Ly-cqh"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="pfJ-Ly-cqh">
+                        <barButtonItem key="rightBarButtonItem" title="AddMovie" id="054-Nf-Ozj">
+                            <connections>
+                                <segue destination="mnb-Ph-HZh" kind="push" id="edr-nb-cYV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8jd-FB-maY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

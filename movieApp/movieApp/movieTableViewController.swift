@@ -71,20 +71,11 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
         movieList.append(movie3)
         movieList.append(movie4)
         movieList.append(movie5)
-        
-        if((Movie) != nil){
-            movieList.append(Movie)
-            print("MovieToadd")
-            DispatchQueue.main.async() {
-                self.tableView.reloadData()
-            }
-        }
        
     }
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async() {
             self.tableView.reloadData()
-        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,7 +91,8 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return movieList.count
+        
     }
 
     
@@ -109,7 +101,6 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
 
         // Configure the cell...
         cell.textLabel?.text=movieList[indexPath.row].title
-        //cell.imageView?.image
         return cell
     }
  
@@ -122,17 +113,17 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
     
         self.navigationController?.pushViewController(controller, animated: false)
         
-        }
+    }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50;
     }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let AddMovieVC=segue.destination as! AddMovieController
-//        AddMovieVC.AddMovievc=self
-//    }
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let AddMovieVC=segue.destination as! AddMovieController
+        AddMovieVC.AddMovievc=self
+    }
     func AddMovie(newMovie: movie) {
-        print("MovieTitle")
         movieList.append(newMovie)
+        self.tableView.reloadData()
     }
     /*
     // Override to support conditional editing of the table view.

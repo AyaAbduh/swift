@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         movieImage.image=UIImage(named: selectedMovie.image!)
         //selectedMovie.genre[0]
         
+        
     }
 
     override func didReceiveMemoryWarning() {
