@@ -67,7 +67,7 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
         movie5.genre?.append("Action")
         movie5.genre?.append("comidy")
         
-        movieList.append(movie1)
+       // movieList.append(movie1)
        // movieList.append(movie2)
       //  movieList.append(movie3)
        // movieList.append(movie4)
@@ -121,8 +121,8 @@ class movieTableViewController: UITableViewController ,AddMovieProtocol{
        
         let controller:ViewController = storyboard.instantiateViewController(withIdentifier: "movieController") as! ViewController
         
-        controller.selectedMovie=movieList[indexPath.row]
-    
+       // controller.selectedMovie=movieList[indexPath.row]    //previous lab
+        controller.selectedMovie=movies[indexPath.row]
         self.navigationController?.pushViewController(controller, animated: false)
         
     }

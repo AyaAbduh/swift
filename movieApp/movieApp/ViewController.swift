@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewController: UIViewController {
     
     
-     var selectedMovie:movie!
+     //var selectedMovie:movie!
+        var selectedMovie:NSManagedObject!
     
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var movieRating: UILabel!
@@ -21,13 +22,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        movieTitle.text=selectedMovie.title
-        let rating = selectedMovie.rating!
-        movieRating.text=String(rating)
-        let releaseyear=selectedMovie.releaseYear!
-        movieReleaseYear.text=String(releaseyear)
-        movieImage.image=UIImage(named: selectedMovie.image!)
-        //selectedMovie.genre[0]
+//        movieTitle.text=selectedMovie.title
+//        let rating = selectedMovie.rating!
+//        movieRating.text=String(rating)
+//        let releaseyear=selectedMovie.releaseYear!
+//        movieReleaseYear.text=String(releaseyear)
+//        movieImage.image=UIImage(named: selectedMovie.image!)
+//        //selectedMovie.genre[0]
+        
+        movieTitle.text=selectedMovie.value(forKey: "title") as! String
+      //  movieRating.text=selectedMovie.value(forKey: "rating") as! String
+       // movieReleaseYear.text=selectedMovie.value(forKey: "releaseYear") as! String
+        movieImage.image=UIImage(named: selectedMovie.value(forKey: "image") as! String)
+            //selectedMovie.genre[0]
         
         
     }
