@@ -31,8 +31,8 @@ class ViewController: UIViewController {
 //        //selectedMovie.genre[0]
         
         movieTitle.text=selectedMovie.value(forKey: "title") as! String
-      //  movieRating.text=selectedMovie.value(forKey: "rating") as! String
-       // movieReleaseYear.text=selectedMovie.value(forKey: "releaseYear") as! String
+        movieRating.text=String(selectedMovie.value(forKey: "rating") as! Float)
+        movieReleaseYear.text=String(selectedMovie.value(forKey: "releaseYear")as! Int)
         movieImage.image=UIImage(named: selectedMovie.value(forKey: "image") as! String)
             //selectedMovie.genre[0]
         
